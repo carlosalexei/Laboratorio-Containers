@@ -17,6 +17,8 @@ Este ejemplo muestra como:
 * Instalar Docker: https://www.docker.com/get-docker
 * (Opcional) Instalar Azure Command Line Interface (CLI): https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 * (Opcional) GIT: https://git-scm.com/
+* (Opcional) Visual Studio Code: https://code.visualstudio.com/
+
 
 ## Ejercicio 1 - Creación de una aplicación ASP.NET Core
 
