@@ -11,6 +11,13 @@ Este ejemplo muestra como:
 4. Crear un cluster de Kubernetes (K8S) administrador por Azure (Azure Kubernetes Services)
 5. Distribuir de la imagen en el cluster de Kubernetes
 
+## Instalación y configuración
+
+* Instalar .NET Core: https://www.microsoft.com/net/download/all
+* Instalar Docker: https://www.docker.com/get-docker
+* (Opcional) Instalar Azure Command Line Interface (CLI): https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+
+
 ## Ejercicio 1 - Creación de una aplicación ASP.NET Core
 
 
