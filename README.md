@@ -20,6 +20,34 @@ Este ejemplo muestra como:
 * (Opcional) Visual Studio Code: https://code.visualstudio.com/
 
 
+Para verificar que ya se instalaron los componentes anteriores, abrir una ventana de Powershell y usar los siguientes comandos:
+
+.NET Core:
+```
+dotnet --version
+```
+
+Docker Community Edition
+```
+docker version
+```
+
+Azure Command Line Interface
+```
+az
+```
+
+GIT
+```
+git version
+```
+
+Visual Studio Code
+``` 
+code .
+```
+
+
 ## Ejercicio 1 - Creación de una aplicación ASP.NET Core
 
 
