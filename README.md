@@ -1,5 +1,7 @@
-# HelloWorld
-Basic ASP.NET Core application 
+# Hello Containers World
+
+Cuando aprendemos un nuevo lenguaje de programación el ejemplo con el que probablemente la mayoría empezamos es con "Hola Mundo"; éste es tal ejemplo con Docker, Kubernetes y Azure Container Services (Managed) AKS. 
+ 
 
 ## Resumen 
 
@@ -162,11 +164,27 @@ docker push $ACR_NAME.azurecr.io/helloworld:v1
 
 ## Ejercicio 4 - Creación de cluster Kubernetes
 
+Para crear un cluster de Kubernetes usando el servicio Azure AKS se utiliza el siguiente comando de Azure CLI:
+
 ```
 az aks create -n ClusterK8s -g Sample-AKS --generate-ssh-keys
 ```
 
-Comandos comunes para administrar el cluster de Kubernetes
+Una vez creado el cluster, es necesario obtener las credenciales de acceso al mismo antes de poder administrarlo
+
+```
+az aks get-credentials -n ClusterK8s -g Sample-AKS
+```
+
+El comando anterior obtiene las credenciales del cluster y las almacena en archivos de configuración que estan en el directorio ~/.kube con lo que ahora se puede administrar el cluster con el cliente de administración de kubernetes
+
+El cliente de Kubernetes (kubectrl) puede instalarse localmente con el siguiente comando:
+
+```
+az aks install-cli 
+```
+
+A continuación algunos de los comandos más comunes para administrar el cluster de Kubernetes
 
 ```
 kubectl get nodes
@@ -184,9 +202,9 @@ kubectl get services
 ## Ejercicio 5 - Distribución de la imagen en el cluster Kubernetes
 
 ```
-ACR_SERVER=miregistry.azurecr.io
-ACR_USER=miregistry
-ACR_PWD=rAjhqfrZtY6TtjgReu4XyI=R0/1dprfq
+ACR_SERVER=<nombre del ACR>.azurecr.io
+ACR_USER=<nombre del ACR>
+ACR_PWD=<clave del ACR>
 
 kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
 
