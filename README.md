@@ -161,7 +161,6 @@ docker push $ACR_NAME.azurecr.io/helloworld:v1
 ```
 
 
-
 ## Ejercicio 4 - Creación de cluster Kubernetes
 
 Para crear un cluster de Kubernetes usando el servicio Azure AKS se utiliza el siguiente comando de Azure CLI:
@@ -216,4 +215,10 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
 kubectl apply -f hello.yml 
 
 ```
+
+## Referencias
+
+Cloud Design Patterns: https://docs.microsoft.com/en-us/azure/architecture/patterns/
+
+
 
