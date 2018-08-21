@@ -1,6 +1,6 @@
-# Hello Containers World
+# Bienvenido al Laboratorio de Contenedores
 
-Cuando aprendemos un nuevo lenguaje de programación el ejemplo con el que probablemente la mayoría empezamos es con "Hola Mundo"; éste es tal ejemplo con Docker, Kubernetes y Azure Container Services (Managed) AKS. 
+Este laboratorio muestra como crear un cluster de Kubernetes con AKS (Azure Kubernetes Service) y correr una aplicación basada en Docker en dicho cluster. 
  
 
 ## Resumen 
@@ -38,7 +38,7 @@ Azure Command Line Interface
 ```
 az
 ```
-
+ 
 GIT
 ```
 git version
