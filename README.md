@@ -15,11 +15,11 @@ Este ejemplo muestra como:
 
 ## Instalación y configuración
 
-* Instalar .NET Core: https://www.microsoft.com/net/download/all
-* Instalar Docker: https://www.docker.com/get-docker
-* (Opcional) Instalar Azure Command Line Interface (CLI): https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
-* (Opcional) GIT: https://git-scm.com/
-* (Opcional) Visual Studio Code: https://code.visualstudio.com/
+* Instalar [.NET Core](https://www.microsoft.com/net/download/all)
+* Instalar [Docker](https://www.docker.com/get-docker)
+* (Opcional) Instalar [Azure Command Line Interface (CLI):](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+* (Opcional) Instalar [GIT](https://git-scm.com/)
+* (Opcional) Instalar [Visual Studio Code](https://code.visualstudio.com/)
 
 
 Para verificar que ya se instalaron los componentes anteriores, abrir una ventana de Powershell y usar los siguientes comandos:
