@@ -54,12 +54,15 @@ code .
 
 
 
-Para crear una aplicación ASP.NET 
+Para crear una aplicación ASP.NET Model-View-Controller, primero se crea un directorio. El nombre de dicho directorio determina el nombre del proyecto y por lo tanto el nombre del archivo binario que se debe ejecutar en el contenedor. 
+
 ```
-mkdir HelloWorld
-cd HelloWorld
-dotnet new mvc
+mkdir HolaMundo
+cd HolaMundo
+dotnet new mvc --no-https
 ```
+
+
 
 Ejercutar localmente la aplicación
 
