@@ -125,7 +125,7 @@ Debe aparecer una imagen con el nombre **holamundo**.
 Se puede ejecutar un contenedor con la aplicación usando:
 
 ```
-docker run -p 4000:80 holamundo:1.0s
+docker run -p 4000:80 holamundo:1.0
 ```
 
 Para verificar que la aplicación esta corriendo localmente es necesario abrir el navegador e ir a la dirección: http://localhost:4000
@@ -159,7 +159,7 @@ Una vez que el registry se ha creado Docker puede usarlo para almacenar imágene
 
 ```
 ACR_NAME=<nombre del repositorio, sin comillas ni llaves>
-docker tag $ACR.azurecr.io/helloworld:v1 helloworld:v1 
+docker tag $ACR.azurecr.io/holamundo:1.0 holamundo:1.0 
 ```
 
 Dado que el repositorio creado (ACR) es privado, antes de poder publicar una imagen es necesario que Docker se autentique con el ACR
@@ -173,7 +173,7 @@ La publicación de la imagen se hace con el siguiente comando de Docker:
 
 ```
 ACR_NAME=<nombre del repositorio, sin comillas ni llaves>
-docker push $ACR_NAME.azurecr.io/helloworld:v1 
+docker push $ACR_NAME.azurecr.io/holamundo:1.0
 ```
 
 
@@ -221,7 +221,7 @@ ACR_SERVER=<nombre del ACR>.azurecr.io
 ACR_USER=<nombre del ACR>
 ACR_PWD=<clave del ACR>
 
-kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=superman@heroes.com
+kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --docker-username=$ACR_USER --docker-password=$ACR_PWD --docker-email=carlos.marquez@microsoft.com
 
 ```
 
@@ -231,6 +231,19 @@ kubectl create secret docker-registry acr-secret --docker-server=$ACR_SERVER --d
 kubectl apply -f hello.yml 
 
 ```
+
+Para verificar que la aplicación ha sido distribuida y está lista 
+
+```
+kubectl get services
+
+```
+
+Frente al servicio holamundo, aparecerá la dirección IP pública del servicio. Para verificar que la aplicación esta corriendo abrir el navegador e ir a la dirección pública.
+
+
+
+
 
 ## Referencias
 

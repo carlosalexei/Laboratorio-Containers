@@ -29,7 +29,7 @@ spec:
         - name: acr-secret
       containers:
       - name: hello
-        image: miregistry.azurecr.io/helloworld:v1
+        image: <miregistry>.azurecr.io/holamundo:1.0
 
 ---
 apiVersion: v1
