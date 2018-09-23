@@ -76,29 +76,42 @@ Para verificar que la aplicación esta corriendo localmente es necesario abrir e
 
 Para empaquetar la aplicacion en una imagen de Docker es necesario crear el archivo Dockerfile en el directorio de la aplicación con las siguientes instrucciones de Docker:
 
-```
-FROM microsoft/aspnetcore-build:2.0 AS build-env
+```Dockerfile
+# Obtiene la imagen base para crear la nueva imagen
+FROM microsoft/dotnet:2.1-sdk AS build-env
+
+# Crea un directorio para la aplicación
 WORKDIR /app
 
-# Copy csproj and restore as distinct layers
+# Copia el archivo de proyecto (*.csproj) al contenedor
 COPY *.csproj ./
+
+# Restaura las librerías (Nugets) requeridas por el proyecto
 RUN dotnet restore
 
-# Copy everything else and build
+# Copia todos los archivos del proyecto al contenedor
 COPY . ./
+
+# Compila la aplicación
 RUN dotnet publish -c Release -o out
 
-# Build runtime image
-FROM microsoft/aspnetcore:2.0
+# Obtiene una segunda imagen con el runtime de aspnetcore
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
+
+# Crea un directorio para la aplicación
 WORKDIR /app
+
+# Copy de la primera imagen (build-env) los archivos binarios
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "HelloWorld.dll"]
+
+# Establece el commando a ejecutar cuando el contenedor se cargue
+ENTRYPOINT ["dotnet", "HolaMundo.dll"]
 ```
 
 El archivo Dockerfile le indica a Docker como debe construir la imagen, para construir la imagen es necesario el siguiente comando:
 
 ```
-docker build -t helloworld:v1 . 
+docker build -t holamundo:1.0
 ```
 
 Para verificar que la imagen se generó adecuadamente 
@@ -107,12 +120,12 @@ Para verificar que la imagen se generó adecuadamente
 docker images
 ```
 
-Debe aparecer una imagen con el nombre **helloworld**.
+Debe aparecer una imagen con el nombre **holamundo**.
 
 Se puede ejecutar un contenedor con la aplicación usando:
 
 ```
-docker run -p 4000:80 helloworld:v1
+docker run -p 4000:80 holamundo:1.0s
 ```
 
 Para verificar que la aplicación esta corriendo localmente es necesario abrir el navegador e ir a la dirección: http://localhost:4000
